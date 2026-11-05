@@ -8,7 +8,7 @@ export default function Nav({current, onNavigate}) {
         },
         {
             label: '文字实验室',
-            key: 'texlab',
+            key: 'textlab',
         },
     ]
     return (

@@ -1,17 +1,21 @@
-import { useState } from 'react';
 import HomePage from "./components/HomePage";
 import TextLabPage from "./components/TextLabPage";
+import { useRouter } from './router/useRouter';
 
 export default function App() {
-    const [ page, setPage] = useState("home");
+
+    const { path, navigate } = useRouter();
+
+    const current = path.startsWith('/text-lab') ? 'textlab': 'home';
+    const onNavigate = (path) => navigate(path === 'textlab'? '/text-lab' : '/');
 
     return (
         <div className="app-shell">
             <div className="page-shell">
                 <main className="page-content">
-                    {page === "home" 
-                    ? <HomePage current={page} onNavigate={setPage}/> 
-                    : <TextLabPage current={page} onNavigate={setPage}/>}
+                    {current === "home" 
+                    ? <HomePage current={current} onNavigate={onNavigate}/> 
+                    : <TextLabPage current={current} onNavigate={onNavigate}/>}
                 </main>
             </div>
         </div>

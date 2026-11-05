@@ -9,7 +9,7 @@ export default function TextLabPage() {
         <AnimatedCardGrid className={'dashboard-grid'}>
             <article className="hero-stage panel-full">
                 <Nav/>
-                <PageHeading/>
+                <PageHeading title="文字实验室" subtitle="拼音和情绪，挖掘中文里的细节"/>
             </article>
             <InputCard/>
             <ResultCard/>
